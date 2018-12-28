@@ -18,17 +18,15 @@ from itertools import product, starmap
 #         [x for x in rs.frange(0.0, 70.0, 0.2)])
 #
 #
-# map(
-#         rs.AddCurve,
-#         [(ri(-100,100), ri(-100,100), ri(-100,100)) for i in range(30)]
-#         )
 
-# rs.AddCurve(
-#         [((i*mt.cos(i)), (i*mt.sin(i)), i) for i in rs.frange(0.0, 70.0, 0.2)]
-#         )
-#
-# rs.AddCurve(
-#         [tuple(map(lambda x: ri(-100,100), range(3))) for i in range(30)])
+rs.AddCurve(
+        [ ((i*mt.cos(i)), (i*mt.sin(i)), i) 
+            for i in rs.frange(0.0, 70.0, 0.2)]
+        )
+
+rs.AddCurve(
+        [ tuple( map(lambda x: ri(-100,100), range(3)) ) 
+            for i in range(30) ])
 
 
 for x, y, z in product( *[range(0,256,10) for i in range(3)] ):
@@ -45,13 +43,15 @@ for x, y, z in product( *[range(0,256,10) for i in range(3)] ):
 #     [(ri(0,100),)*3 + (uf(0,255),)*3) for i in range(30)]))
 #
 #
-# map(lambda x: rs.AddPoint(x[0],x[1],x[2]),
-#         [tuple(map(lambda x: ri(0,100), range(3))) + tuple(map(lambda x: uf(0,255), \
-#                 range(3))) for i in range(10000)])
-#
-#
-# tuple(starmap(lambda x,y,z,r,g,b: rs.ObjectColor(
-#     rs.AddPoint(x,y,z), [r,g,b]),
-#     [tuple( map(lambda x: ri(0,100), range(3)) ) + \
-#             tuple( map(lambda x: uf(0,255), range(3)) ) for i in range(10000)]
-#     ))
+map(lambda x: rs.AddPoint(x[0],x[1],x[2]),
+        [tuple(map(lambda x: ri(0,100), range(3))) + tuple(map(lambda x: uf(0,255), \
+                range(3))) for i in range(10000)])
+
+
+tuple(starmap(lambda x,y,z,r,g,b: rs.ObjectColor(
+    rs.AddPoint(x,y,z), [r,g,b]),
+
+    [tuple( map(lambda x: ri(0,100), range(3)) ) + \
+            tuple( map(lambda x: uf(0,255), range(3)) ) 
+            for i in range(10000)]
+    ))
