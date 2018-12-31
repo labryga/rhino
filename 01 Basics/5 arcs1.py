@@ -1,11 +1,11 @@
-def AddArcDir(ptStart, ptEnd, vecDir):
+def createArcDirection(ptStart, ptEnd, vecDir):
     vecBase = rs.PointSubtract(ptEnd, ptStart)
     if rs.VectorLength(vecBase)==0.0: return
 
     if rs.IsVectorParallelTo(vecBase, vecDir): return
 
-    vecBase = rs.VectorUnitize(vecBase)
-    vecDir = rs.VectorUnitize(vecDir)
+    vectorBase = rs.VectorUnitize(vecBase)
+    vectorDirection = rs.VectorUnitize(vecDir)
 
     vecBisector = rs.VectorAdd(vecDir, vecBase)
     vecBisector = rs.VectorUnitize(vecBisector)
