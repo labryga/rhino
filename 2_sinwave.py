@@ -1,0 +1,10 @@
+import rhinoscriptsyntax as r
+from rhinoscriptsyntax import frange as fr
+from math import sin, cos, pi
+
+
+# map(r.AddPoints,
+#         [(x, 0.05*(x**3)+(x**2)+3, 0) for x in fr(-22,9, 0.5)])
+
+p01 = [(x, 0.05*(x**3)+(x**2)+3, 0) for x in fr(-22,9, 0.5)]
+r.AddInterpCurve(p01)
