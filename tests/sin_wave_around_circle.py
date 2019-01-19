@@ -8,6 +8,6 @@ map(lambda x: r.ObjectColor(
 r.AddCurve(p01)
 
 
-# map(lambda x: r.ObjectColor(
-#     r.AddPoints(x), [0,0,255] ),
-#     [(sin(x/8), cos(x/8), sin(x)) for x in r.frange(0.0, 50.24, 0.157)] )
+map(lambda x: r.ObjectColor(
+    r.AddPoints(x), [0,0,255] ),
+    [(sin(x/8), cos(x/8), sin(x)) for x in r.frange(0.0, 50.24, 0.157)] )
