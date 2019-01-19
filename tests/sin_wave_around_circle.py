@@ -4,7 +4,7 @@ from math import sin, cos
 
 p01 = [(sin(x/4), cos(x/4), sin(x)*0.5) for x in r.frange(0.0, 25.12, 0.157)]
 map(lambda x: r.ObjectColor(
-    r.AddPoints(x), [122,215,128] ), p01)
+    r.AddPoints(x), [122,115,128] ), p01)
 r.AddCurve(p01)
 
 
