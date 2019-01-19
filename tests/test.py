@@ -5,19 +5,19 @@ import random
 from itertools import product, starmap
 
 
-# map(lambda x: rs.ObjectColor(
-#     x[0](listPoints2), x[1]), [
-#         (rs.AddPolyline, (222,220,10)),
-#         (rs.AddCurve, (22,220,55)),
-#         (rs.AddInterpCurve, (0,100,50))
-#     ])
-#
-# map(rs.AddPoint, listPoints2)
-#
-# map(lambda x: rs.AddPoint(x*mt.cos(x), x*mt.sin(x), 0), 
-#         [x for x in rs.frange(0.0, 70.0, 0.2)])
-#
-#
+map(lambda x: rs.ObjectColor(
+    x[0](listPoints2), x[1]), [
+        (rs.AddPolyline, (222,220,10)),
+        (rs.AddCurve, (22,220,55)),
+        (rs.AddInterpCurve, (0,100,50))
+    ])
+
+map(rs.AddPoint, listPoints2)
+
+map(lambda x: rs.AddPoint(x*mt.cos(x), x*mt.sin(x), 0), 
+        [x for x in rs.frange(0.0, 70.0, 0.2)])
+
+
 
 rs.AddCurve(
         [ ((i*mt.cos(i)), (i*mt.sin(i)), i) 
