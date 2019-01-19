@@ -29,5 +29,7 @@ def blendcorners():
         newverts.append(w2)
         newverts.append(between(w2,b))
     newverts.append(vertices[len(vertices)-1])
+
     rs.AddCurve(newverts, 5)
+
     rs.DeleteObject(polyline_id)
